@@ -10,6 +10,9 @@ on:
           description: Person to greet
           required: true
           default: Mona the Octocat
+        name:
+          description: another param
+          required: true
   push:
     branches: [ main ]
  
