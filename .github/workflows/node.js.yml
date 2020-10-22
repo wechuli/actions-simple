@@ -12,6 +12,7 @@ on:
           default: Mona the Octocat
   push:
     branches: [ main ]
+ 
   pull_request:
     branches: [ main ]
 
