@@ -12,5 +12,5 @@ jobs:
     echo:
       runs-on: ubuntu-latest
       steps:
-          - run: echo ${{ github.events.inputs.name }}
+          - run: echo ${{ github.event.inputs.name }}
           - run: echo Paul
