@@ -1,0 +1,22 @@
+name: Generate and upload an artifact
+
+on:
+  workflow_dispatch:
+      inputs:
+          name: 
+            description: provide a random name
+            required: true
+            default: PaulW
+
+jobs:
+  generatelog:
+    name: generate-log
+    steps:
+      - shell : bash
+        run: |
+         expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v1
+        with:
+          name: output-log-file
+          path: output.lo
