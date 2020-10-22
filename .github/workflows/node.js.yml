@@ -6,7 +6,7 @@ name: Node.js CI
 on:
   workflow_dispatch:
       inputs:
-        name:
+        tag:
           description: Person to greet
           required: true
           default: Mona the Octocat
