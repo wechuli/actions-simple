@@ -8,6 +8,7 @@ function subtract(param1,param2){
 function multiply(param1,param2){
     return param1 * param2;
 }
+
 module.exports = {
 add,subtract,multiply
 }
