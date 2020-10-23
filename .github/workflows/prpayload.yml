@@ -1,0 +1,34 @@
+
+
+name: Node.js CI
+
+on:
+  workflow_dispatch:
+      inputs:
+        tag:
+          description: Person to greet
+          required: true
+          default: Mona the Octocat
+        name:
+          description: another param
+          required: true
+ 
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - shell : bash
+      run: |
+         echo ${{ github.event.pull_request.head.ref }}
+         echo ${{ github.event.pull_request.base.sha }}

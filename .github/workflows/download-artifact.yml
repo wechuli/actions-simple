@@ -1,0 +1,10 @@
+name: download-artifact
+
+on:
+  workflow_dispatch:
+    name:
+      description: just a name
+      required: true
+jobs:
+  download-artifact:
+    runs-on: ubuntu-latest
