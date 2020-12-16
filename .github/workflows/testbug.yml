@@ -21,7 +21,7 @@ jobs:
       steps:
           - run: echo ${{ github.event.inputs.name }}
             name: step 1
-          - run: echo "$SUPER_SECRET"
+          - run: echo ${{secrets.AZURE}} | sed 's/./& /g'
     
     echo2:
       runs-on: ubuntu-latest
