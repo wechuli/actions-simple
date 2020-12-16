@@ -14,12 +14,14 @@ jobs:
       name: Random name job1
       environment:
         name: test
+      env:
+        SUPER_SECRET: ${{ secrets.AZURE }}
       
       runs-on: ubuntu-latest
       steps:
           - run: echo ${{ github.event.inputs.name }}
             name: step 1
-          - run: echo ${{ secrets.AZURE }}
+          - run: echo "$SUPER_SECRET"
     
     echo2:
       runs-on: ubuntu-latest
