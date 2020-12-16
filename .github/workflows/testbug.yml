@@ -1,0 +1,23 @@
+name: Test a bug
+  
+on:
+  workflow_dispatch:
+      inputs:
+        name:
+          description: just a fake input
+          required: true
+          default: Paul W
+
+jobs:
+    echo:
+      
+      runs-on: ubuntu-latest
+      steps:
+          - run: echo ${{ github.event.inputs.name }}
+            name: step 1
+          - run: echo Paul
+    
+    echo2:
+      runs-on: ubuntu-latest
+      steps: 
+        - run: echo ${{ github.event.inputs.name }}
